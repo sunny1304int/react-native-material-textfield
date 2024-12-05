@@ -12,7 +12,7 @@ export default class Counter extends PureComponent {
     baseColor: PropTypes.string.isRequired,
     errorColor: PropTypes.string.isRequired,
 
-    style: PropTypes.any,
+    // style: PropTypes.any,
   };
 
   render() {

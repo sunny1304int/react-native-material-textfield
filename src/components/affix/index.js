@@ -11,7 +11,7 @@ export default class Affix extends PureComponent {
 
   static propTypes = {
     numberOfLines: PropTypes.number,
-    style: PropTypes.any,
+    // style: PropTypes.any,
 
     color: PropTypes.string.isRequired,
     fontSize: PropTypes.number.isRequired,
