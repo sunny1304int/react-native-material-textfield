@@ -536,8 +536,8 @@ export default class TextField extends PureComponent {
     );
   }
 
-  renderAccessory() {
-    let { renderAccessory } = this.props;
+  renderAccessory(type) {
+    let renderAccessory = this.props?.[`${type}`];
 
     if ('function' !== typeof renderAccessory) {
       return null;
