@@ -18,6 +18,51 @@ import Counter from '../counter';
 
 import styles from './styles';
 
+const textInputProps = [
+  'autoCapitalize',
+  'autoComplete',
+  'autoCorrect',
+  'autoFocus',
+  'blurOnSubmit',
+  'clearButtonMode',
+  'clearTextOnFocus',
+  'contextMenuHidden',
+  'defaultValue',
+  'editable',
+  'keyboardType',
+  'maxLength',
+  'multiline',
+  'numberOfLines',
+  'onChange',
+  'onChangeText',
+  'onContentSizeChange',
+  'onEndEditing',
+  'onFocus',
+  'onKeyPress',
+  'onSubmitEditing',
+  'passwordRules',
+  'placeholder',
+  'placeholderTextColor',
+  'returnKeyLabel',
+  'returnKeyType',
+  'secureTextEntry',
+  'selectionColor',
+  'selectTextOnFocus',
+  'style',
+  'textAlign',
+  'value',
+  'underlineColorAndroid',
+  'editable',
+  'maxLength',
+  'showSoftInputOnFocus',
+  'inputAccessoryViewID',
+  'scrollEnabled',
+  'textAlignVertical',
+  'caretHidden',
+  'clearTextOnFocus',
+  'enableInteractiveSelection'
+];
+
 function startAnimation(animation, options, callback) {
   Animated
     .timing(animation, options)
@@ -467,17 +512,11 @@ export default class TextField extends PureComponent {
 
   inputProps() {
     let store = {};
-
-    for (let key in TextInput.propTypes) {
-      if ('defaultValue' === key) {
-        continue;
-      }
-
-      if (key in this.props) {
+    textInputProps.forEach((key)=>{
+      if ('defaultValue' !== key && key in this.props) {
         store[key] = this.props[key];
       }
-    }
-
+    })
     return store;
   }
 
